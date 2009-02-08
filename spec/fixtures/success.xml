@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?> 
+<LocaWeb> 
+  <Transacao> 
+    <IdTransacao>3da568b6-6e39-46c6-9d3f-898e68939c56</IdTransacao> 
+    <Codigo>1049</Codigo> 
+    <CodRetorno>0</CodRetorno> 
+    <MensagemRetorno>Transação iniciada.</MensagemRetorno> 
+  </Transacao> 
+</LocaWeb>

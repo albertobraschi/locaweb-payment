@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?> 
+<LocaWeb> 
+  <Transacao> 
+    <IdTransacao>bd0046df-89ec-495b-a460-db35dc303262</IdTransacao> 
+    <Codigo>2356</Codigo> 
+    <Data>11/9/2008 11:13:09</Data> 
+    <CodRetorno>15</CodRetorno> 
+    <MensagemRetorno>Transação processada.</MensagemRetorno> 
+  </Transacao> 
+  <Comprador> 
+    <Nome>Nome do Comprador </Nome> 
+    <Email>teste@teste.com.br</Email> 
+    <Cpf>99999999999</Cpf> 
+    <TipoPessoa>Fisica</TipoPessoa> 
+    <RazaoSocial>Locaweb SA</RazaoSocial> 
+    <Cnpj>99999999999999</Cnpj> 
+  </Comprador> 
+  <Pagamento> 
+    <Modulo>CartaoCredito</Modulo> 
+    <Tipo>Visa</Tipo> 
+    <Processado>true</Processado> 
+    <MensagemRetorno>Pagamento efetuado.</MensagemRetorno> 
+  </Pagamento> 
+  <Pedido> 
+    <Numero>100</Numero> 
+    <ValorTotal>13432</ValorTotal> 
+  </Pedido> 
+</LocaWeb> 

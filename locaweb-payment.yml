@@ -1,0 +1,13 @@
+development:
+  return_to: "/payments/success"
+  authentication_key: "abc"
+  developer: true
+
+test:
+  return_to: "/payments/success"
+  authentication_key: "abc"
+  developer: true
+  
+production:
+  return_to: "/payments/success"
+  authentication_key: "1ab22220-b01b-4c54-a520-b083acc30945"

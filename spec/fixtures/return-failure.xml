@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?> 
+<LocaWeb> 
+  <Transacao> 
+    <IdTransacao>29851115-b060-48fc-8c31-8e78cff5b5d5</IdTransacao> 
+    <Codigo>1046</Codigo> 
+    <Data>29/5/2008 08:58:51</Data> 
+    <CodRetorno>17</CodRetorno> 
+    <MensagemRetorno>Transação com tempo de pagamento expirado.</MensagemRetorno> 
+  </Transacao> 
+  <Comprador> 
+    <Nome>Nome do Comprador </Nome> 
+    <Email>teste@teste.com.br</Email> 
+    <Cpf>99999999999</Cpf> 
+    <TipoPessoa>Fisica</TipoPessoa> 
+    <RazaoSocial>Locaweb SA</RazaoSocial> 
+    <Cnpj>99999999999999</Cnpj> 
+  </Comprador> 
+  <Pagamento> 
+    <Modulo>CartaoCredito</Modulo> 
+    <Tipo>Visa</Tipo> 
+    <Processado>false</Processado> 
+    <MensagemRetorno>Erro ao processar o pagamento. CartaoCredito</MensagemRetorno> 
+  </Pagamento> 
+  <Pedido> 
+    <Numero>1006</Numero> 
+    <ValorTotal>3154</ValorTotal> 
+  </Pedido> 
+</LocaWeb> 

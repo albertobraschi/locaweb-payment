@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?> 
+<LocaWeb> 
+  <Transacao> 
+    <CodRetorno>21</CodRetorno> 
+    <MensagemRetorno>CPF/CNPJ não pertence à conta de comprador informada. Email:teste@teste.com.br; CPF/CNPJ:99999999999</MensagemRetorno> 
+  </Transacao> 
+</LocaWeb>
