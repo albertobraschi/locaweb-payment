@@ -8,12 +8,24 @@ module Locaweb
     
     # Return the configuration for the current environment
     def config
-      CONFIG[RAILS_ENV]
+      Locaweb::Base::CONFIG[RAILS_ENV]
     end
     
     # Load the configuration and set it to the CONFIG constant
     def self.config!
-      CONFIG.merge!(YAML.load_file(CONFIG_FILE))
+      Locaweb::Base::CONFIG.merge!(YAML.load_file(CONFIG_FILE))
+    end
+    
+    def self.config_file=(path)
+      Locaweb::Base::CONFIG_FILE.gsub!(/^.*?$/, path)
+    end
+    
+    # Ported silence_warnings method from rails to remove ActiveSupport dependency
+    def silence_warnings
+    	old_verbose, $VERBOSE = $VERBOSE, nil
+      yield
+    ensure
+      $VERBOSE = old_verbose
     end
   end
 end

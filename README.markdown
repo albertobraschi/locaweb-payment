@@ -92,7 +92,10 @@ Usage
 	payment.message
 	payment.status
 	payment.id
-
+	
+	# you can set a different configuration file
+	Locaweb::Base.config_file = "some/path"
+	
 TO-DO
 -----
 

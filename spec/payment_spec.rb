@@ -2,9 +2,7 @@ require File.dirname(__FILE__) + "/spec_helper"
 
 describe "Payment" do
   before(:each) do
-    silence_warnings do
-      Locaweb::Base::CONFIG_FILE = File.dirname(__FILE__) + "/fixtures/locaweb-payment.yml"
-    end
+    Locaweb::Base.config_file = File.dirname(__FILE__) + "/fixtures/locaweb-payment.yml"
     
     @wsdl    = mock("wsdl", :null_object => true)
     @factory = mock("factory", :null_object => true, :create_rpc_driver => @wsdl)
