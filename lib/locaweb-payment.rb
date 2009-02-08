@@ -9,4 +9,4 @@ require "hpricot"
   payment
   result
   return
-).each {|f| require File.dirname(__FILE__) + "/locaweb/#{f}" }
+).each {|f| require File.dirname(__FILE__) + "/locaweb-payment/#{f}" }

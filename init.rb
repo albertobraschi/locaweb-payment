@@ -1,1 +1,1 @@
-require File.dirname(__FILE__) + "/lib/locaweb"
+require File.dirname(__FILE__) + "/lib/locaweb-payment"
