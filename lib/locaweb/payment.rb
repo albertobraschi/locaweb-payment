@@ -120,13 +120,12 @@ module Locaweb
     
     def process
       process_xml!
-      response = nil
       
-      silence_warnings do
-        response = wsdl.iniciaTransacao({
+      response = silence_warnings do
+        wsdl.iniciaTransacao({
           :chaveVendedor => config["authentication_key"],
           :urlRetorno    => config["return_to"],
-          :xml           => @xml.target!
+          :xml           => xml.target!
         })
       end
       
@@ -135,6 +134,9 @@ module Locaweb
      Locaweb::Result.new(nil)
     end
     
+    # ATTENTION: The XML nodes must follow the same order
+    # from the Integration Docs examples. And this took me a lot of time to figure out!
+    # Stupid, but it works!
     def process_xml!
       @xml = nil
       

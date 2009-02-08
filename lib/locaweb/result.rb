@@ -19,23 +19,23 @@ module Locaweb
     end
     
     def id
-      @id ||= (@xml/"IdTransacao").text if success?
+      @id ||= (@xml/"IdTransacao").text if started?
     end
     
     def code
-      @code ||= (@xml/"Codigo").text if success?
+      @code ||= (@xml/"Codigo").text if started?
     end
     
     def status
       @status ||= (@xml/"CodRetorno").text if @xml
     end
     
-    def success?
+    def started?
       status == "0"
     end
     
     def url(invoice=false)
-      return nil unless success?
+      return nil unless started?
       
       if invoice
         INVOICE_URL + id

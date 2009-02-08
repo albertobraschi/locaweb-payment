@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + "/spec_helper"
 describe "Payment" do
   before(:each) do
     silence_warnings do
-      Locaweb::Payment::CONFIG_FILE = File.dirname(__FILE__) + "/fixtures/locaweb-payment.yml"
+      Locaweb::Base::CONFIG_FILE = File.dirname(__FILE__) + "/fixtures/locaweb-payment.yml"
     end
     
     @wsdl    = mock("wsdl", :null_object => true)
@@ -44,19 +44,19 @@ describe "Payment" do
     before(:each) do
       @contents = File.read(File.dirname(__FILE__) + "/fixtures/success.xml")
       
-      @result = mock("result", :iniciaTransacaoResult => @contents)
+      @response = mock("response", :iniciaTransacaoResult => @contents)
       
       @wsdl.should_receive(:iniciaTransacao).with({
         :chaveVendedor => "3cb77220-b01b-4c54-a520-b083acc30954",
         :urlRetorno    => "/payments/success",
         :xml           => anything
-      }).and_return(@result)
+      }).and_return(@response)
       
       @result = @payment.process
     end
     
     it "should return result" do
-      @result.should be_success
+      @result.should be_started
       @result.status.should == "0"
       @result.code.should == "1049"
       @result.id.should == "3da568b6-6e39-46c6-9d3f-898e68939c56"
@@ -84,7 +84,7 @@ describe "Payment" do
     end
     
     it "should return result" do
-      @result.should_not be_success
+      @result.should_not be_started
       @result.status.should == "21"
       @result.code.should be_nil
       @result.id.should be_nil
@@ -104,7 +104,7 @@ describe "Payment" do
     end
     
     it "should return result" do
-      @result.should_not be_success
+      @result.should_not be_started
       @result.status.should be_nil
       @result.code.should be_nil
       @result.id.should be_nil
@@ -113,10 +113,6 @@ describe "Payment" do
   end
   
   describe "XML" do
-    # ATTENTION: The XML nodes must follow the same order
-    # from the Integration Docs examples. And this took me sometime to figure out!
-    # Stupid, but it works!
-    
     it "should be a :person buyer" do
       @payment.process
       doc = Hpricot::XML(@payment.xml.target!)

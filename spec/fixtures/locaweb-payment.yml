@@ -1,12 +1,10 @@
 development:
   return_to: "/payments/success"
   authentication_key: "3cb77220-b01b-4c54-a520-b083acc30954"
-  developer: true
 
 test:
   return_to: "/payments/success"
   authentication_key: "3cb77220-b01b-4c54-a520-b083acc30954"
-  developer: true
   
 production:
   return_to: "/payments/success"

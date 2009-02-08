@@ -1,7 +1,7 @@
 Locaweb Payment
 ===============
 
-Brazilian payment gateway [PagamentoCerto](http://www.pagamentocerto.com.br/) wrapper for Ruby On Rails.
+Ruby On Rails wrapper for the Brazilian payment gateway [PagamentoCerto](http://www.pagamentocerto.com.br/).
 
 This is a **WORKING IN PROGRESS** and many things can be changed.
 
@@ -73,7 +73,7 @@ Usage
 	result.code
 	
 	# this transaction has been started successfuly?
-	result.success?
+	result.started?
 	
 	# redirect to the payment page
 	redirect_to result.url
